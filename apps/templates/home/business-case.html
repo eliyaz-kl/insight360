@@ -1,0 +1,202 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Profile {% endblock title %}
+
+{% block content %}
+
+
+<!-- Page content -->
+<div class="container-fluid pt-4">
+    <div class="row">
+        <div class="col-xl-8 order-xl-1">
+            <div class="card">
+                <div class="card-body">
+                    <form id="myForm">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 class="text-muted">RPA - Business Case</h2>
+                            <div class="tlogo">
+                                <img src="/static/assets/img/projectimg/logo-tanfeeth.svg" width="80%"
+                                     alt="Image placeholder" class="tlogo">
+                            </div>
+                        </div>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-average-volume">Average volume
+                                            daily</label>
+                                        <input type="text" id="input-average-volume" class="form-control"
+                                               placeholder="Daily Volume" value="1000">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="selectedItems">Sub Process</label>
+                                        <input type="text" id="selectedItems" class="form-control"
+                                               placeholder="Sub Process" readonly onclick="openPopup()">
+                                        <div class='poopup-container popup' id="popup">
+                                            <div class="row">
+                                                <div id="sortables">
+                                                    <div class="wrapper">
+                                                        <div class="sortable-container">
+                                                            <ul class="sortable">
+                                                                <li>Closed</li>
+                                                                <li>Reject</li>
+                                                                <li>Reassign</li>
+                                                                <li>Excecute</li>
+                                                                <li>Completed</li>
+                                                                <li>sortable 6</li>
+                                                                <li>sortable 1</li>
+                                                                <li>sortable 2</li>
+                                                                <li>sortable 3</li>
+                                                                <li>sortable 4</li>
+                                                                <li>sortable 5</li>
+                                                                <li>sortable 6</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="sortable-container">
+                                                            <ul class="sortable" id="rightList"></ul>
+                                                        </div>
+                                                        <div class="cancel d-flex align-items-center justify-content-center"
+                                                             onclick="closePopup();">
+                                                            <i class="ni ni-fat-remove text-white"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-manual-tat">Manual TAT</label>
+                                        <input type="text" id="input-manual-tat" class="form-control"
+                                               placeholder="20 Mins" Value="20 Minutes">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-sla">SLA</label>
+                                        <input type="text" id="input-sla" class="form-control"
+                                               placeholder="20 Mins" value="30 Minutes">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-ocr">OCR</label>
+                                        <input type="text" id="input-ocr" class="form-control"
+                                               placeholder="OCR Involved?" value="NA">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-applications-used">Systems
+                                            (Applications Involved)</label>
+                                        <input type="text" id="input-applications-used" class="form-control"
+                                               placeholder="Systems" Value="CTF, MSD, Cortex, TMS, ACL, RBS">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-current-ftes">Current FTE's</label>
+                                        <input type="number" id="input-current-ftes" class="form-control"
+                                               placeholder="30" value="30">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-success-rate">Planned success rate
+                                            %</label>
+                                        <input type="text" id="input-success-rate" class="form-control"
+                                               placeholder="80" value="60">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-fte-saving">FTE Saving</label>
+                                        <input type="number" id="input-fte-saving" class="form-control"
+                                               placeholder="15" Value="15">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-saving-type">Saving type</label>
+                                        <input type="text" id="input-saving-type" class="form-control"
+                                               placeholder="Saving Type" value="Direct FTE Saving">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-no-of-bots">No of Bots</label>
+                                        <input type="number" id="input-no-of-bots" class="form-control"
+                                               placeholder="10" value="10">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-status">Status</label>
+                                        <input type="text" id="input-status" class="form-control"
+                                               placeholder="Full\Partial Automation" Value="Full Automation">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tnote">*Note : For any changes or ammendments in fields, Kindly contact the Application Team for support*</div>
+                        </div>
+                        <!-- Description -->
+
+                        <div class="pl-lg-4">
+                            <button class="btn btn-submit">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "includes/footer.html" %}
+
+</div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+
+<script>
+$('.sortable').sortable({
+  connectWith: '.sortable',
+  revert: 0,
+  forcePlaceholderSize: true,
+  placeholder: 'ui-sortable-placeholder',
+  tolerance: 'pointer'
+}).disableSelection();
+
+function openPopup() {
+    //document.getElementById('test').style.display = 'block';
+   $('#popup').fadeIn(1000);
+}
+    // Function to close the popup
+    function closePopup() {
+        // Get the selected items from the right list
+        var selectedItems = Array.from(document.getElementById('rightList').children).map(item => item.textContent.trim());
+
+        // Update the input field value
+        document.getElementById('selectedItems').value = `(${selectedItems.length}) ${selectedItems.join(', ')}`;
+
+      // Close the popup
+      document.getElementById('popup').style.display = 'none';
+    }
+</script>
+
+{% endblock javascripts %}
+
