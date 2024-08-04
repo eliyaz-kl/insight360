@@ -68,7 +68,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: Open Sans, sans-serif;
+  font-family: "Poppins", Open Sans, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -706,6 +706,629 @@ button.btn.btn-submit {
     font-size: 14px;
     color: #bbb;
 }
+
+#myForm .table td, .table th {
+    border-color: #000 !important;
+    padding: 5px !important;
+}
+
+#myForm .table thead th {
+    font-size: 0.84rem;
+    font-weight: bold;
+}
+
+#required-field {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    font-size: medium;
+    color: red;
+    font-weight: bold;
+}
+
+#myForm .nav-link {
+    color: black;
+    border: none;
+}
+#myForm .nav-tabs .nav-link:hover, #myForm .nav-tabs .nav-link:focus {
+    border: none;
+    color: black;
+}
+
+#myForm .nav-tabs .nav-link.active, #myForm .nav-tabs .nav-item.show .nav-link{
+    background: rgb(146 213 0 / 10%);;
+    color: #92d500;
+    border-bottom: 2px solid;
+    border-radius: 0;
+}
+
+.highlight {
+    background-color: rgb(219 255 141 / 50%);; /* You can customize the highlight style */
+}
+.select2-results__option.select2-results__option--selectable {
+    display: block;
+}
+.select2-results__option.select2-results__option--selectable.select2-results__option--selected {
+    display: none;
+}
+
+/* button styling for ticket success submit page */
+
+.btn-go-to-dashboard {
+    background-color: #ecf0f2 !important;
+    border-radius: 50px !important;
+    color: #667082 !important;
+
+}
+.btn-go-to-dashboard:hover {
+    box-shadow: none !important;
+    transform: none !important;
+}
+.btn-go-to-dashboard i {
+    transition: all 200ms;
+}
+.btn-go-to-dashboard:hover i {
+    transform: translatex(-3px);
+}
+
+.ticket-created-card h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+}
+
+.ticket-created-card h3 {
+    font-size: 26px;
+    color: #6b7585;
+    font-weight: normal;
+    font-family: "Roboto", sans-serif;
+}
+
+.ticket-created-card p{
+    font-size: 20px;
+    color: #999;
+    font-family: "Roboto", sans-serif;
+}
+
+.ticket-created-card li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+.btn-view-ticket {
+    background-color: #fee5f8 !important;
+    border-radius: 50px !important;
+    color: #ae1285 !important;
+}
+
+.btn-view-ticket:hover {
+    box-shadow: none !important;
+    transform: none !important;
+}
+.btn-view-ticket i {
+    transition: all 200ms;
+}
+.btn-view-ticket:hover i {
+    transform: translatex(3px);
+}
+
+/* Defining new class to disable select on text */
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+
+/* Styling Tickets view page */
+.card .table td, .card .table th {
+    text-align: center;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.card .table td:nth-child(1), .card .table th:nth-child(1) {
+    text-align: left;
+    padding-left: 10px !important;
+}
+.ticket-view-table span {
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 5px 14px;
+}
+.ticket-view-table .low {
+    background-color: rgb(152 226 154);
+}
+.ticket-view-table .medium {
+    background-color: rgb(242 240 170);
+}
+.ticket-view-table .high {
+    background-color: rgb(255 178 178);
+}
+
+.ticket-view-table thead {
+    padding: 10px 0;
+    background-color: #000;
+    color: #fff;
+}
+
+.ticket-view-table.table thead th {
+    font-weight: bold;
+    padding:  10px 0 !important;
+}
+
+.table th:last-child {
+  max-width: 50px; /* Adjust the value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Optional: handle overflow with ellipsis */
+  white-space: nowrap;
+}
+
+
+/* Single ticket page styling */
+
+.ticket-timeline,
+.ticket-details {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.ticket-timeline-status p,
+.ticket-detiail-name p {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+}
+.ticket-timeline-time i {
+    color: green;
+    font-size: 14px;
+}
+.ticket-timeline-time span {
+    font-size: 13px;
+}
+.ticket-timeline-status span {
+    font-size: 12px;
+    display: block;
+    margin-top: 0;
+}
+.ticket-timeline-delay p {
+    font-size: 14px;
+}
+
+.ticket-timeline-header,
+.ticket-details-heading {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+.w-10 {
+    width: 10%;
+}
+.w-15 {
+    width: 15%;
+}
+.w-20 {
+    width: 20%;
+}
+.w-25 {
+    width: 25%;
+}
+.w-30 {
+    width: 30%;
+}
+.w-35 {
+    width: 35%;
+}
+.w-40 {
+    width: 40%;
+}
+.w-45 {
+    width: 45%;
+}
+.w-50 {
+    width: 50%;
+}
+.w-55 {
+    width: 55%;
+}
+.w-60 {
+    width: 60%;
+}
+.ticket-detiail-description p {
+    font-size: 14px;
+    margin: 0;
+    color: #000;
+}
+
+.ticket-creation-content p {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+.back-to-all-tickets .btn {
+    padding: 10px 20px;
+    background-color: #000;
+    border: 2px solid #000;
+    color: #fff;
+    border-radius: 50px;
+}
+.back-to-all-tickets .btn:hover {
+    box-shadow: none;
+    transform: translateY(0);
+    background-color: #fff;
+    color: #000;
+}
+.back-to-all-tickets .btn i {
+    transition: all 300ms;
+}
+.back-to-all-tickets .btn:hover i {
+    transform: translateX(-4px);
+}
+.ticket-heading h3 {
+    font-size: 30px;
+    color: #000;
+    font-weight: 600;
+}
+.ql-container {
+  height: 250px;
+  max-height: 250px;
+  overflow: auto;
+  border-radius: 0 0 10px 10px;
+}
+
+.ql-toolbar.ql-snow {
+    border-radius: 10px 10px 0 0;
+    border: 2px solid #ccc !important;
+}
+
+.ql-toolbar.ql-snow .ql-formats {
+    border-right: 1px solid #ccc;
+    margin : 0px 5px !important;
+}
+.ql-toolbar.ql-snow .ql-formats:last-child {
+    border: none;
+}
+.ticket-flags-tags .btn {
+    color: #111;
+    border-radius: 2px;
+    transition: all 300ms;
+    padding: 10px;
+    line-height: 1.2;
+    border: 1px solid #000;
+}
+.ticket-flags-tags .btn:hover {
+    background-color: #000;
+    color: #fff;
+    box-shadow: none !important;
+    transform: translateY(0px) !important;
+}
+.ticket-open h2 {
+    font-weight: bold;
+}
+.my-select {
+    padding: 5px 10px;
+}
+
+.ticket-change-status {
+    font-family: "Roboto", sans-serif;
+}
+
+.ticket-change-status .btn {
+    border: 1px solid #cccccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 400;
+    background-color: blue;
+    transform: translateY(0px) !important;
+}
+.ticket-change-status .btn:hover{
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.ticket-assigned-users {
+    position: relative;
+}
+.ticket-assigned-users .btn{
+    padding: 0;
+    box-shadow: none;
+    transform: translateY(0px) !important;
+    border-radius: 50px !important;
+}
+.ticket-assigned-user img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+}
+.ticket-assigned-user {
+    position: absolute;
+    top: 0;
+}
+.ticket-assigned-user:nth-child(1) {
+    left: 0;
+}
+.ticket-assigned-user:nth-child(2) {
+    left: 25px;
+}
+.ticket-assigned-users:hover .ticket-assigned-user {
+    opacity: 0.5;
+}
+.ticket-assigned-users .ticket-assigned-user:hover {
+    opacity: 1;
+    z-index: 1;
+}
+.ticket-action-details .nav-link:hover,
+ .ticket-action-details .nav-link.active {
+    border-color: transparent !important;
+}
+.ticket-action-details .nav-link.active {
+    background: transparent !important;
+    z-index: 5;
+    transition-delay: 2s;
+}
+.ticket-action-details .nav-link {
+    position: relative;
+}
+.ticket-action-details .nav-link.active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgb( 59 130 246 );
+    z-index: 0;
+    transition: all 200ms;
+}
+
+
+
+
+/* Ticket details activity section at the bottom after opening ticket */
+
+.tda-user-details img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+
+.tda-change-status-header div,
+.tda-comment-header div {
+    margin-right: 10px;
+}
+
+.tda-status-change-column div,
+ .tda-workflow-column div {
+    width: 30%;
+    margin: 5px 10px;
+}
+
+.tda-comment-admin-options a {
+    color: #ccc;
+}
+.tda-comment-admin-options .tda-edit-comment {
+    border-right: 2px solid #eee;
+}
+.ticket-details-tag {
+    display: flex;
+}
+.ticket-details-tag h4 {
+    width: 30%;
+}
+.tickets-pagination ul.pagination {
+    justify-content: end;
+}
+.tickets-pagination li.page-item a {
+    border: none;
+    border-radius: 0;
+}
+.tickets-pagination ul .page-item .page-link, .tickets-pagination ul .page-item span {
+    font-weight: bold;
+    color: #CCC;
+    border-radius: 0 !important;
+}
+
+.tickets-pagination li.page-item span {
+    font-size: 25px;
+    color: #444;
+}
+.tickets-pagination li.page-item a {
+    font-size: 20px;
+}
+
+.tickets-pagination li.page-item .active {
+        color: #000;
+    border-bottom: 2px solid;
+}
+
+button.reassign-btn, .reassign-button {
+    background: #000 !important;
+    color: #fff;
+    transform: translateY(0) !important;
+    transition: all 300ms;
+    border: 1px solid #000 !important;
+    font-weight: normal;
+    padding: 8px 14px;
+
+}
+.reassign-btn:hover,.reassign-button:hover  {
+    background-color: #fff !important;
+    color: #000 !important;
+    box-shadow: none;
+    border: 1px solid #000 !important;
+}
+
+
+#reassignticket .modal-body .dropdown button {
+        background: #cccccc0f;
+    border: 1px solid #cccccc4f;
+    color: #777;
+    box-shadow: none;
+}
+
+#reassignticket .modal-body .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
+}
+
+#reassignticket .modal-footer button {
+    box-shadow: none;
+    transition: all 300ms;
+}
+#reassignticket .modal-footer button:hover {
+    box-shadow: none;
+    transform: translateY(0) !important;
+}
+.accordion-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 0;
+    overflow-anchor: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
+}
+.accordion-button::after {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: auto;
+    content: "";
+    background-image: url("../img//icons/arrow down.svg");
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    transition: transform .2s ease-in-out;
+}
+.accordion-collapse {
+padding: 10px;
+    border: 1px solid black;
+    border-top: 0px;
+}
+.bootstrap-select>select.bs-select-hidden,select.bs-select-hidden,select.selectpicker {
+    display: inline-block !important;
+}
+
+.rel-ticket-assignee img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.related-ticket-wrap {
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+.rel-ticket-status p {
+    padding: 5px 15px;
+    color: orange;
+    background: #ffa5002e;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #000 !important;
+}
+.form-control {
+    color: #000 !important;
+}
+
+
+/* Copy text tooltip css */
+
+.ticket-number button {
+    font-size: 14px !important;
+}
+
+ #copy {
+	 position: relative;
+	 box-sizing: border-box;
+	 background-color: #482ff7;
+	 color: #fff;
+	 font-size: 20px;
+	 font-family: "Jost", sans-serif;
+	 font-weight: 500;
+	 padding: 5px 10px;
+	 border: 0;
+	 border-radius: 10px;
+	 outline: none;
+	 cursor: pointer;
+	 user-select: none;
+	 margin-left: 20px;
+}
+ #copy:before {
+	 content: "";
+	 width: 16px;
+	 height: 16px;
+	 bottom: -15px;
+	 left: 20px;
+	 clip-path: polygon(50% 40%, 0% 100%, 100% 100%);
+}
+ #copy:after {
+	 content: attr(tooltip);
+	 width: 120px;
+	 bottom: -40px;
+	 left: -35px;
+	 padding: 5px;
+	 border-radius: 4px;
+	 font-size: 0.8rem;
+}
+ #copy:before, #copy:after {
+	 opacity: 0;
+	 pointer-events: none;
+	 position: absolute;
+	 box-sizing: border-box;
+	 background-color: #000;
+	 color: #fff;
+	 transition: all 300ms ease;
+}
+ #copy:hover:before, #copy:hover:after {
+	 opacity: 0.65;
+	 transform: translateY(0);
+}
+
+
+
+
+
+/* CSS */
+.button-34 {
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
 
 /*End Custom CSS*/
 

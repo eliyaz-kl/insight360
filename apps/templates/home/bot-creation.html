@@ -5,6 +5,8 @@
 {% block content %}
 
 
+
+
 <!-- Page content -->
 <div class="container-fluid pt-4">
     <div class="row">
@@ -13,44 +15,165 @@
                 <div class="card-body">
                     <form id="myForm">
                         <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2 class="text-muted">RPA - Bot Creation</h2>
-                            <div class="tlogo">
-                                <img src="/static/assets/img/projectimg/logo-tanfeeth.svg" width="80%"
-                                     alt="Image placeholder" class="tlogo">
-                            </div>
+                        <h2 class="text-muted">RPA - Bot Creation</h2>
+                        <div class="t-logo">
+                        <img src="/static/assets/img/projectimg/logo-tanfeeth.svg" width="80%"
+                        alt="Image placeholder" class="tlogo">
+                        </div>
+                        </div>
+
+                        <!-- Bootstrap Tabs -->
+                        <ul class="nav nav-tabs mb-4" id="myTabs">
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="CreateNewIDs" data-bs-toggle="tab" data-bs-target="#createNew" type="button" role="tab" aria-controls="createNew" aria-selected="true"><a href="#createNew">Create
+                        New IDs</a></button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="extendIdsTab" data-bs-toggle="tab" data-bs-target="#extendIds" type="button" role="tab" aria-controls="extendIds" aria-selected="true"><a href="#createNew">Create
+                        New IDs</a></button>
+                        </li>
+                        </ul>
+
+                        <div class="pl-lg-4">
+                        <div class="row">
+                        <div class="col-lg-4">
+                        <div class="form-group">
+                        <label class="form-control-label" for="input-agreed-bots">Agreed
+                        Bots</label>
+                        <input type="number" id="input-agreed-bots" class="form-control"
+                        placeholder="Agreed Bots" value="8" readonly>
+                        </div>
+                        </div>
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-4">
+                        <div class="form-group">
+                        <label class="form-control-label" for="input-total-bots">Total
+                        Bots</label>
+                        <input type="number" id="input-total-bots" class="form-control"
+                        placeholder="Total Bots" value="8" readonly>
+                        </div>
+                        </div>
+                        </div>
                         </div>
                         <div class="pl-lg-4">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="input-Department">Department</label>
-                                        <select id="input-Department" class="form-control" name="Department"
-                                                value="{{ request.user.Department }}">
-                                            <option value="Default">- Select Department -</option>
-                                            <option value="Business Analist">Business Analist</option>
-                                            <option value="Information Technology">Information Technology</option>
-                                            <option value="Development">Development</option>
-                                            <option value="Production">Production</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="input-Businessunit">Business Unit</label>
-                                        <select id="input-Businessunit" class="form-control" name="Business Unit"
-                                                placeholder="{{ request.user.Businessunit }}">
-                                            <option value="Default">- Select Business Unit -</option>
-                                            <option value="Business Analist">Business Analist</option>
-                                            <option value="Information Technology">Information Technology</option>
-                                            <option value="Development">Development</option>
-                                            <option value="Production">Production</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row">
+                        <div class="col-lg-4">
+                        <div class="form-group">
+                        <label class="form-control-label" for="input-project-name">Project
+                        Name</label>
+                        <input type="text" id="input-project-name" class="form-control"
+                        placeholder="Project Name" value="Change Product" readonly>
+                        </div>
+                        </div>
+                        <div class="col-lg-4">
+                        <div class="form-group">
+                        <label class="form-control-label" for="input-project-full-name">Full
+                        name of
+                        Process</label>
+                        <input type="text" id="input-project-full-name" class="form-control"
+                        placeholder="Project Full Name"
+                        value="Request to change of product" readonly>
+                        </div>
+                        </div>
+                        <div class="col-lg-4">
+                        <div class="form-group">
+                        <label class="form-control-label" for="input-bot-id">BOT ID
+                        structure</label>
+                        <input type="text" id="input-bot-id" class="form-control"
+                        placeholder="BXXXXX" value="BXXXXX" readonly>
+                        </div>
+                        </div>
+                        <div class="col-lg-8">
 
                         </div>
+                        </div>
+                        </div>
+
+                        <div class="tab-content mt-2">
+                        <div class="tab-pane fade show active" id="createNew" aria-labelledby="CreateNewIDs">
+                        <div class="pl-lg-4">
+                        <div class="row">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-4 text-center">
+                        <button class="btn btn-primary" id="generateNewTable">Generate Bot ID's
+                        </button>
+                        </div>
+                        <div class="col-lg-4"></div>
+                        </div>
+                        </div>
+
+                        <div class="pl-lg-4 mt-lg-4">
+                        <div class="row m-0">
+                        <table id="resultTable" class="table w-100 text-center" border="1">
+                        <thead>
+                        <tr>
+                        <th>Process Full Name</th>
+                        <th>BOT ID list</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Table rows will be dynamically generated here -->
+                        </tbody>
+                        </table>
+                        </div>
+                        </div>
+                        </div>
+
+
+                        <div class="tab-pane fade" id="extendIds" role="tabpanel" aria-labelledby="extendIdsTab">
+                        <div class="pl-lg-4">
+                        <div class="row">
+                        <!-- Additional input fields for extending bot IDs -->
+                        <div class="col-lg-4">
+                        <div class="form-group">
+                        <label class="form-control-label" for="input-extra-ids">No of BOTs to
+                        extend</label>
+                        <input type="number" id="input-extra-ids" class="form-control"
+                        placeholder="Define Number">
+                        <span id="required-field">*This field is required*</span>
+                        </div>
+                        </div>
+                        <div class="col-lg-4"></div>
+                        </div>
+                        </div>
+
+                        <div class="pl-lg-4">
+                        <div class="row">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-4 text-center">
+                        <button class="btn btn-primary" id="generateExtendTable">Generate Bot ID's
+                        </button>
+                        </div>
+                        <div class="col-lg-4"></div>
+                        </div>
+                        </div>
+                        <div class="pl-lg-4 mt-lg-4">
+                        <div class="row">
+                        <table id="resultTable2" class="table w-100 text-center" border="1">
+                        <thead>
+                        <tr>
+                        <th>Process Full Name</th>
+                        <th>BOT ID list</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Table rows will be dynamically generated here -->
+                        </tbody>
+                        </table>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
                         <hr class="my-4"/>
+                        <div class="pl-lg-4">
+                        <div class="row align-items-right">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-4 pt-4 d-flex justify-content-end">
+                        <button class="btn btn-submit" type="submit">Submit</button>
+                        </div>
+                        </div>
+                        </div>
 
                     </form>
 
@@ -68,7 +191,62 @@
 {% block javascripts %}
 
 <script>
+    $(document).ready(function () {
+        $("#generateNewTable").on("click", function (event) {
+         event.preventDefault();
+            // Get values from inputs
+            var totalBots = $("#input-total-bots").val();
+            var projectName = $("#input-project-full-name").val();
+            var botIdPattern = $("#input-bot-id").val();
 
+            // Clear existing table rows
+            $("#resultTable tbody").empty();
+
+            // Generate table rows based on the pattern
+            for (var i = 1; i <= totalBots; i++) {
+                var formattedNumber = i.toString().padStart(2, '0');
+                var row = $("<tr>");
+                var cell1 = $("<td>").text(projectName +" "+ formattedNumber);
+                var cell2 = $("<td>").text(botIdPattern + formattedNumber);
+                row.append(cell1, cell2);
+                $("#resultTable tbody").append(row);
+            }
+         });
+
+         $("#generateExtendTable").on("click", function (event) {
+         event.preventDefault();
+            // Get values from inputs
+            var totalBots = $("#input-total-bots").val();
+            var projectName = $("#input-project-full-name").val();
+            var botIdPattern = $("#input-bot-id").val();
+            var inputExtraIds = $("#input-extra-ids").val();
+            var extendStartID = Number(totalBots) + 1 ;
+            var extendStopID = Number(totalBots) + Number(inputExtraIds) ;
+
+            if(document.getElementById("input-extra-ids").value.length == 0) {
+                $("#required-field").show();
+            } else {
+                $("#required-field").hide();
+            }
+
+
+            // Clear existing table rows
+            $("#resultTable2 tbody").empty();
+
+            // Extend table rows based on provided pattern
+            for (var i = extendStartID; i <= extendStopID; i++) {
+                var formattedNumber = i.toString().padStart(2, '0');
+                var row = $("<tr>");
+                var cell1 = $("<td>").text(projectName + formattedNumber);
+                var cell2 = $("<td>").text(botIdPattern + formattedNumber);
+                row.append(cell1, cell2);
+                $("#resultTable2 tbody").append(row);
+            }
+
+         });
+
+
+    });
 </script>
 
 {% endblock javascripts %}

@@ -1,0 +1,175 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Profile {% endblock title %}
+
+{% block content %}
+
+
+<!-- Page content -->
+<div class="container-fluid pt-4">
+    <div class="row">
+        <div class="col-xl-8 order-xl-1">
+            <div class="card">
+                <div class="card-body">
+                    <form id="myForm">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 class="text-muted">RPA - Allocate VM's</h2>
+                            <div class="t-logo">
+                                <img src="/static/assets/img/projectimg/logo-tanfeeth.svg" width="80%"
+                                     alt="Image placeholder" class="tlogo">
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center">
+                            <div class="col-lg-3">
+                                <div class="heading">No of VM's to allocate</div>
+                            </div>
+                            <div class="col-lg-3"><input type="number" id="input-agreed-bots" class="form-control"
+                                                         placeholder="Agreed Bots" value="8" readonly></div>
+                            <div class="col-lg-6"></div>
+                        </div>
+
+                        <div class="row mt-5">
+                            <table id="allocate-vm-bot" class="table w-100 text-center" border="1">
+                                <thead>
+                                <tr>
+                                    <th>VM IP</th>
+                                    <th>VM Hostname</th>
+                                    <th>BOT ID list</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>10.252.181</td>
+                                    <td>HOROBOCCPRD121V</td>
+                                    <td>BCCCPM01</td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.182</td>
+                                    <td>HOROBOCCPRD122V</td>
+                                    <td>BCCCPM02</td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.183</td>
+                                    <td>HOROBOCCPRD123V</td>
+                                    <td>BCCCPM03</td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.184</td>
+                                    <td>HOROBOCCPRD124V</td>
+                                    <td>BCCCPM04</td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.185</td>
+                                    <td>HOROBOCCPRD125V</td>
+                                    <td>BCCCPM05</td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.186</td>
+                                    <td>HOROBOCCPRD126V</td>
+                                    <td>BCCCPM06</td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.187</td>
+                                    <td>HOROBOCCPRD127V</td>
+                                    <td>BCCCPM07</td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.188</td>
+                                    <td>HOROBOCCPRD128V</td>
+                                    <td>BCCCPM08</td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.189</td>
+                                    <td>HOROBOCCPRD129V</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.190</td>
+                                    <td>HOROBOCCPRD130V</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.191</td>
+                                    <td>HOROBOCCPRD131V</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.192</td>
+                                    <td>HOROBOCCPRD132V</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.193</td>
+                                    <td>HOROBOCCPRD133V</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.194</td>
+                                    <td>HOROBOCCPRD134V</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>10.252.195</td>
+                                    <td>HOROBOCCPRD135V</td>
+                                    <td></td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <hr class="my-4"/>
+
+                        <div class="pl-lg-4">
+                            <div class="row align-items-right">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4 d-flex justify-content-end">
+                                    <button class="btn btn-submit" type="submit">Submit</button>
+
+<!--                                    <button class="button-34" role="button">Submit</button>-->
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "includes/footer.html" %}
+
+</div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+
+<script>
+    $(document).ready(function() {
+        var agreedBotsValueFromBackend =  $('#input-agreed-bots').val()
+        highlightRows(agreedBotsValueFromBackend);
+
+        $('#input-agreed-bots').on('input', function() {
+            var inputValue = $(this).val();
+            highlightRows(inputValue);
+        });
+        function highlightRows(value) {
+            // Remove previous highlights
+            $('#allocate-vm-bot tbody tr').removeClass('highlight');
+
+            // Highlight the exact number of rows based on the value in the input field
+            $('#allocate-vm-bot tbody tr:lt(' + value + ')').addClass('highlight');
+        }
+
+    });
+
+
+</script>
+
+{% endblock javascripts %}
+

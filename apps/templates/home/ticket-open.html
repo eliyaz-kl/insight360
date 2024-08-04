@@ -1,0 +1,774 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Profile {% endblock title %}
+
+{% block content %}
+
+
+<!-- Page content -->
+<div class="container-fluid pt-4">
+    <div class="row">
+        <div class="col-xl-12 order-xl-1">
+            <div class="card">
+                <div class="card-body ticket-open">
+
+                    <div class="back-to-all-tickets mb-3">
+                        <button class="btn"><i class="fa-solid fa-arrow-left pr-2"></i>All Tickets</button>
+                    </div>
+                    <div class="ticket-open">
+                        <div class="row">
+                            <div class="col-xl-9">
+
+
+                                <h2>Ticket : #REQ00000001</h2>
+                                <div class="row align-items-center">
+                                    <div class="col-xl-9">
+                                        <div class="ticket-heading">
+                                            <h3>Process Developemnt : Early Settlement of Credit Card</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3">
+                                        <div class="ticket-additional-options">
+                                            <div class="ticket-flags-tags d-flex">
+                                                <div class="ticket-flag mr-1">
+                                                    <button type="button" class="btn" data-toggle="tooltip"
+                                                            data-placement="top" title="Set flag">
+                                                        <i class="fa-regular fa-flag"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="ticket-tag mr-1">
+                                                    <button type="button" class="btn" data-toggle="tooltip"
+                                                            data-placement="top" title="Tag Ticket">
+                                                        <i class="fa-solid fa-tags"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="ticket-star mr-1">
+                                                    <button type="button" class="btn" data-toggle="tooltip"
+                                                            data-placement="top" title="Star Ticket">
+                                                        <i class="fa-regular fa-star"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="ticket-print mr-1">
+                                                    <button type="button" class="btn" data-toggle="tooltip"
+                                                            data-placement="top" title="Print">
+                                                        <i class="fa-solid fa-print"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="ticket-share mr-1">
+                                                    <button type="button" class="btn" data-toggle="tooltip"
+                                                            data-placement="top" title="Share">
+                                                        <i class="fa-solid fa-share-nodes"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--<div id="editor"></div>-->
+
+                                <!-- TIcket detailed view -->
+
+
+                                <div class="ticket-detials mt-3">
+                                    <div class="ticket-detials-column d-flex">
+                                        <div class="ticket-change-status mr-5">
+                                            <div class="ticket-detials-heading">Status</div>
+                                            <select class="my-select selectpicker" data-container="body">
+                                                <option>New Ticket</option>
+                                                <option>Active</option>
+                                                <option>Hold</option>
+                                                <option>Error</option>
+                                                <option>Pending</option>
+                                                <option>Mark Completed</option>
+                                            </select>
+                                            <button class="btn" type="button">
+                                                <i class="fa-regular fa-pen-to-square mr-2"></i>Update Status
+                                            </button>
+                                        </div>
+                                        <div class="ticket-assignment-details">
+                                            <div class="ticket-status-heading">Assigned to</div>
+                                            <div class="ticket-assigned-users">
+                                                <div class="ticket-assigned-user">
+                                                    <button type="button" class="btn" data-toggle="tooltip"
+                                                            data-placement="top" title="User1">
+                                                        <img alt="Image placeholder"
+                                                             src="/static/assets/img/theme/team-3.jpg">
+                                                    </button>
+                                                </div>
+                                                <div class="ticket-assigned-user">
+                                                    <button type="button" class="btn" data-toggle="tooltip"
+                                                            data-placement="top" title="User2">
+                                                        <img alt="Image placeholder"
+                                                             src="/static/assets/img/theme/team-4.jpg">
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="ticket-details-body mt-5">
+                                    <div class="ticket-detiais-tab">
+                                        <div class="ticket-details-tags row">
+                                            <div class="ticket-details-tag col-xl-6">
+                                                <h4>Type :</h4>
+                                                <p>Urgent Request</p>
+                                            </div>
+                                            <div class="ticket-details-tag col-xl-6">
+                                                <h4>Priority :</h4>
+                                                <p>Very High</p>
+                                            </div>
+                                            <div class="ticket-details-tag col-xl-6">
+                                                <h4>Labels :</h4>
+                                                <p>None</p>
+                                            </div>
+                                            <div class="ticket-details-tag col-xl-6">
+                                                <h4>Resolution :</h4>
+                                                <p>Un resolved</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr/>
+
+                                    <div class="related-tickets mb-4">
+                                        <div class="related-ticket-header d-flex justify-content-between align-items-center">
+                                            <h2>Related Tickets</h2>
+                                            <a href="#">Create Sub Ticket</a>
+                                        </div>
+                                        <div class="related-tickets-column mb-2">Style 1
+                                            <div class="related-ticket-wrap d-flex justify-content-between align-items-center px-3 py-3">
+                                                <div class="rel-ticket-details d-flex">
+                                                    <div class="rel-ticket-no mr-5"><a href="#">#ITReq00000001</a></div>
+                                                    <div class="rel-ticket-title"><b>Raised request to allocate new VM's</b></div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <div class="rel-ticket-assignee mr-4">
+                                                        <img alt="Image placeholder"
+                                                        src="/static/assets/img/theme/team-3.jpg">
+                                                    </div>
+                                                    <div class="rel-ticket-status">
+                                                        <p class="m-0">In Progress</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="related-tickets-column">style 2
+                                            <div class="related-ticket-wrap d-flex justify-content-between align-items-center px-3 py-3">
+                                                <p class="m-0">Currently there are no tickets linked to this</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr/>
+
+                                    <div class="accordion" id="season-1">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header m-0" id="episode-1">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#episode-1-body" aria-expanded="true"
+                                                        aria-controls="episode-1-body">Description for the process
+                                                </button>
+                                            </h2>
+                                            <div id="episode-1-body" class="accordion-collapse collapse"
+                                                 aria-labelledby="episode-1" data-bs-parent="#season-1">
+                                                <div class="accordion-body">
+                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                        eiusmod
+                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                        minim veniam,
+                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                        commodo
+                                                        consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                                        velit esse
+                                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                                        cupidatat
+                                                        non proident, sunt in culpa qui officia deserunt mollit anim id
+                                                        est
+                                                        laborum."</p>
+
+                                                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                                        accusantium
+                                                        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+                                                        illo inventore
+                                                        veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                                                        Nemo enim
+                                                        ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                                        fugit, sed quia
+                                                        consequuntur magni dolores eos qui ratione voluptatem sequi
+                                                        nesciunt. Neque
+                                                        porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                                                        consectetur,
+                                                        adipisci velit, sed quia non numquam eius modi tempora incidunt
+                                                        ut labore et
+                                                        dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+                                                        veniam, quis
+                                                        nostrum exercitationem ullam corporis suscipit laboriosam, nisi
+                                                        ut aliquid
+                                                        ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
+                                                        qui in ea
+                                                        voluptate velit esse quam nihil molestiae consequatur, vel illum
+                                                        qui dolorem
+                                                        eum fugiat quo voluptas nulla pariatur?"</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="ticket-action-details mt-5">
+                                    <ul class="nav nav-tabs">
+
+
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="all-details" data-bs-toggle="tab" data-bs-target="#alldetails" role="tab" aria-controls="alldetails" aria-selected="true">Home</button>
+                                        </li>
+
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="comments-tab" data-bs-toggle="tab" data-bs-target="#comments-tab-pane" type="button" role="tab" aria-controls="comments-tab-pane" aria-selected="false">Comments</button>
+                                          </li>
+
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="worklog-tab" data-bs-toggle="tab" data-bs-target="#worklog-tab-pane" type="button" role="tab" aria-controls="worklog-tab-pane" aria-selected="false">Work Log</button>
+                                          </li>
+
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="history-tab" data-bs-toggle="tab" data-bs-target="#history-tab-pane" type="button" role="tab" aria-controls="history-tab-pane" aria-selected="false">History</button>
+                                          </li>
+
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="process-info-tab" data-bs-toggle="tab" data-bs-target="#process-info-tab-pane" type="button" role="tab" aria-controls="process-info-tab-pane" aria-selected="false">Process Info</button>
+                                          </li>
+
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="status-tab" data-bs-toggle="tab" data-bs-target="#status-tab-pane" type="button" role="tab" aria-controls="status-tab-pane" aria-selected="false">Status</button>
+                                          </li>
+
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="sla-overview-tab" data-bs-toggle="tab" data-bs-target="#sla-overview-tab-pane" type="button" role="tab" aria-controls="sla-overview-tab-pane" aria-selected="false">SLA Overview</button>
+                                          </li>
+
+
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="alldetails" role="tabpanel" aria-labelledby="all-details" tabindex="0">
+                                            <div class="ticket-details-all-activity">
+
+                                                <!-- Change status -->
+
+                                                <div class="ticket-details-activity-column mt-4">
+                                                    <div class="tda-change-status">
+                                                        <div class="tda-change-status-header d-flex mb-3">
+                                                            <div class="tda-user-details">
+                                                                <img alt="Image placeholder"
+                                                                     src="/static/assets/img/theme/team-4.jpg">
+                                                                <a href="#">Venu Gopal Reddy </a>
+                                                            </div>
+                                                            <div class="tda-change-type">
+                                                                made changes -
+                                                            </div>
+                                                            <div class="tda-date">
+                                                                15/Feb/2024 11:24 AM
+                                                            </div>
+                                                        </div>
+                                                        <div class="tda-status-change-detials">
+                                                            <div class="tda-status-change-column d-flex">
+                                                                <div> Status</div>
+                                                                <div class="tda-original-status">
+                                                                    <b>Original:</b> Ticket Created
+                                                                </div>
+                                                                <div class="tda-new-status">
+                                                                    <b>New:</b> IT Department
+                                                                </div>
+                                                            </div>
+                                                            <div class="tda-workflow-column d-flex">
+                                                                <div> Workflow</div>
+                                                                <div class="tda-original-workflow">
+                                                                    <b>Original:</b> Ticket Created
+                                                                </div>
+                                                                <div class="tda-new-status">
+                                                                    <b>New:</b> Bot Creation
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Divider -->
+
+                                                <hr class="mx-4"/>
+
+                                                <!-- Comment section -->
+
+                                                <div class="ticket-details-activity-column mt-4">
+                                                    <div class="tda-comment">
+                                                        <div class="tda-comment-header d-flex mb-3">
+                                                            <div class="tda-user-details">
+                                                                <img alt="Image placeholder"
+                                                                     src="/static/assets/img/theme/team-4.jpg">
+                                                                <a href="#">Venu Gopal Reddy </a>
+                                                            </div>
+                                                            <div class="tda-change-type">
+                                                                added a comment -
+                                                            </div>
+                                                            <div class="tda-date">
+                                                                15/Feb/2024 11:24 AM
+                                                            </div>
+                                                        </div>
+                                                        <div class="tda-comment-text">
+                                                            As per the flow we have redirected the ticket to IT team to
+                                                            create BOTs.
+                                                        </div>
+                                                        <div class="tda-comment-admin-options d-flex mt-3">
+                                                            <div class="tda-edit-comment px-2"><a href="#">Edit</a>
+                                                            </div>
+                                                            <div class="tda-delete-comment px-2"><a href="#">Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Divider -->
+
+                                                <hr class="mx-4"/>
+
+                                                <!-- Comment section -->
+
+                                                <div class="ticket-details-activity-column mt-4">
+                                                    <div class="tda-comment">
+                                                        <div class="tda-comment-header d-flex mb-3">
+                                                            <div class="tda-user-details">
+                                                                <img alt="Image placeholder"
+                                                                     src="/static/assets/img/theme/team-4.jpg">
+                                                                <a href="#">Venu Gopal Reddy </a>
+                                                            </div>
+                                                            <div class="tda-change-type">
+                                                                added a comment -
+                                                            </div>
+                                                            <div class="tda-date">
+                                                                15/Feb/2024 11:00 AM
+                                                            </div>
+                                                        </div>
+                                                        <div class="tda-comment-text">
+                                                            As per the flow we have redirected the ticket to IT team to
+                                                            create BOTs.
+                                                        </div>
+                                                        <div class="tda-comment-admin-options d-flex mt-3">
+                                                            <div class="tda-edit-comment px-2"><a href="#">Edit</a>
+                                                            </div>
+                                                            <div class="tda-delete-comment px-2"><a href="#">Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Divider -->
+
+                                                <hr class="mx-4"/>
+
+                                                <!-- New Ticket Notification -->
+
+                                                <div class="ticket-details-activity-column mt-4">
+                                                    <div class="tda-new-ticket d-flex">
+                                                        <div class="tda-user-details mr-2">
+                                                            <img alt="Image placeholder"
+                                                                 src="/static/assets/img/theme/team-4.jpg">
+                                                            <a href="#">Venu Gopal Reddy </a>
+                                                        </div>
+                                                        <div class="tda-change-type">
+                                                            Created ticket -
+                                                        </div>
+                                                        <div class="tda-date">
+                                                            15/Feb/2024 10:24 AM
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="tab-pane fade" id="comments-tab-pane" role="tabpanel" aria-labelledby="comments-tab" tabindex="0">
+                                            <div class="tda-comments-only">
+                                                <!-- Comment section -->
+
+                                                <div class="ticket-details-activity-column mt-4">
+                                                    <div class="tda-comment">
+                                                        <div class="tda-comment-header d-flex mb-3">
+                                                            <div class="tda-user-details">
+                                                                <img alt="Image placeholder"
+                                                                     src="/static/assets/img/theme/team-4.jpg">
+                                                                <a href="#">Venu Gopal Reddy </a>
+                                                            </div>
+                                                            <div class="tda-change-type">
+                                                                added a comment -
+                                                            </div>
+                                                            <div class="tda-date">
+                                                                15/Feb/2024 11:24 AM
+                                                            </div>
+                                                        </div>
+                                                        <div class="tda-comment-text">
+                                                            As per the flow we have redirected the ticket to IT team to
+                                                            create BOTs.
+                                                        </div>
+                                                        <div class="tda-comment-admin-options d-flex mt-3">
+                                                            <div class="tda-edit-comment px-2"><a href="#">Edit</a>
+                                                            </div>
+                                                            <div class="tda-delete-comment px-2"><a href="#">Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Divider -->
+
+                                                <hr class="mx-4"/>
+
+                                                <!-- Comment section -->
+
+                                                <div class="ticket-details-activity-column mt-4">
+                                                    <div class="tda-comment">
+                                                        <div class="tda-comment-header d-flex mb-3">
+                                                            <div class="tda-user-details">
+                                                                <img alt="Image placeholder"
+                                                                     src="/static/assets/img/theme/team-4.jpg">
+                                                                <a href="#">Venu Gopal Reddy </a>
+                                                            </div>
+                                                            <div class="tda-change-type">
+                                                                added a comment -
+                                                            </div>
+                                                            <div class="tda-date">
+                                                                15/Feb/2024 11:00 AM
+                                                            </div>
+                                                        </div>
+                                                        <div class="tda-comment-text">
+                                                            As per the flow we have redirected the ticket to IT team to
+                                                            create BOTs.
+                                                        </div>
+                                                        <div class="tda-comment-admin-options d-flex mt-3">
+                                                            <div class="tda-edit-comment px-2"><a href="#">Edit</a>
+                                                            </div>
+                                                            <div class="tda-delete-comment px-2"><a href="#">Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="worklog-tab-pane" role="tabpanel"  aria-labelledby="worklog-tab" tabindex="0">
+                                            <div>No work log recorder yet!</div>
+                                        </div>
+
+                                        <div class="tab-pane fade" id="history-tab-pane" role="tabpanel"  aria-labelledby="history-tab" tabindex="0">
+                                            <div class="tda-history-only">
+                                                <div class="ticket-details-all-activity">
+
+                                                    <!-- Change status -->
+
+                                                    <div class="ticket-details-activity-column mt-4">
+                                                        <div class="tda-change-status">
+                                                            <div class="tda-change-status-header d-flex mb-3">
+                                                                <div class="tda-user-details">
+                                                                    <img alt="Image placeholder"
+                                                                         src="/static/assets/img/theme/team-4.jpg">
+                                                                    <a href="#">Venu Gopal Reddy </a>
+                                                                </div>
+                                                                <div class="tda-change-type">
+                                                                    made changes -
+                                                                </div>
+                                                                <div class="tda-date">
+                                                                    15/Feb/2024 11:24 AM
+                                                                </div>
+                                                            </div>
+                                                            <div class="tda-status-change-detials">
+                                                                <div class="tda-status-change-column d-flex">
+                                                                    <div> Status</div>
+                                                                    <div class="tda-original-status">
+                                                                        <b>Original:</b> Ticket Created
+                                                                    </div>
+                                                                    <div class="tda-new-status">
+                                                                        <b>New:</b> IT Department
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tda-workflow-column d-flex">
+                                                                    <div> Workflow</div>
+                                                                    <div class="tda-original-workflow">
+                                                                        <b>Original:</b> Ticket Created
+                                                                    </div>
+                                                                    <div class="tda-new-status">
+                                                                        <b>New:</b> Bot Creation
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="process-info-tab-pane" role="tabpanel"  aria-labelledby="process-info-tab" tabindex="0" >
+                                            <div>
+                                                <div class="process-detialed-info mt-5">
+                                                    <div class="row">
+                                                        <div class="process-details-column col-xl-4">
+                                                            <h3>Department : </h3>
+                                                            <p>Early Settlement of Credit Card</p>
+                                                        </div>
+                                                        <div class="process-details-column col-xl-4">
+                                                            <h3>Business unit : </h3>
+                                                            <p>Early Settlement of Credit Card</p>
+                                                        </div>
+                                                        <div class="process-details-column col-xl-4">
+                                                            <h3>Project name : </h3>
+                                                            <p>Early Settlement of Credit Card</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="process-details-column col-xl-4">
+                                                            <h3>Process Owner : </h3>
+                                                            <p>Early Settlement of Credit Card</p>
+                                                        </div>
+                                                        <div class="process-details-column col-xl-4">
+                                                            <h3>Point of contact(SPOC) : </h3>
+                                                            <p>Early Settlement of Credit Card</p>
+                                                        </div>
+                                                        <div class="process-details-column col-xl-4">
+                                                            <h3>Daily Average volume : </h3>
+                                                            <p>Early Settlement of Credit Card</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="process-details-column col-xl-4">
+                                                            <h3>BOT ID Structure : </h3>
+                                                            <p>Early Settlement of Credit Card</p>
+                                                        </div>
+                                                        <div class="process-details-column col-xl-4">
+                                                            <h3>SLA : </h3>
+                                                            <p>Early Settlement of Credit Card</p>
+                                                        </div>
+                                                        <div class="process-details-column col-xl-4">
+                                                            <h3>TAT : </h3>
+                                                            <p>Early Settlement of Credit Card</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="status-tab-pane" role="tabpanel"  aria-labelledby="statuss-tab" tabindex="0" >
+                                            <div class="tda-time-status">
+                                                <div class="tda-status-table mt-4">
+                                                    <table class="table table-bordered table-striped w-50">
+                                                        <thead>
+                                                        <tr>
+                                                            <th scope="col">Status</th>
+                                                            <th scope="col">Time Elapsed</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>In Review</td>
+                                                            <td>10d 14h 45m</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>On Hold</td>
+                                                            <td>5d 6h 32m</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Dependency</td>
+                                                            <td>4d 21h 2m</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Development</td>
+                                                            <td>0d 0h 0m</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="sla-overview-tab-pane" role="tabpanel"  aria-labelledby="sla-overview-tab" tabindex="0">
+                                            <div>SLA Overview</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-xl-3">
+                                <!-- Ticket Timeline side bar -->
+                                <div class="ticket-creation-details d-flex justify-content-between mb-4 p-2">
+                                    <div class="ticket-creation-content">
+                                        <p>Created : 07 Mar 2024</p>
+                                        <p>Last update : 12 hours ago</p>
+                                    </div>
+                                    <div class="ticket-configuration">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <span>Configuration</span>
+                                    </div>
+                                </div>
+                                <!-- Ticket Timeline side bar -->
+                                <div class="ticket-timeline mb-5">
+                                    <div class="ticket-timeline-header">
+                                        <p>Timeline</p>
+                                    </div>
+                                    <div class="ticket-timeline-body">
+                                        <div class="ticket-timeline-details d-flex mb-3">
+                                            <div class="ticket-timeline-time w-25">
+                                                <i class="fa-solid fa-check"></i>
+                                                <span>1h 30m</span>
+                                            </div>
+                                            <div class="ticket-timeline-status w-55">
+                                                <p>Bussiness Analist</p>
+                                                <span>BRD Created and submitted</span>
+                                            </div>
+                                            <div class="ticket-timeline-delay w-20">
+                                                <p>In time</p>
+                                            </div>
+                                        </div>
+                                        <div class="ticket-timeline-details d-flex mb-3">
+                                            <div class="ticket-timeline-time w-25">
+                                                <i class="fa-solid fa-check"></i>
+                                                <span>1h 30m</span>
+                                            </div>
+                                            <div class="ticket-timeline-status w-55">
+                                                <p>Infra Team</p>
+                                                <span>BOT ID's Created</span>
+                                            </div>
+                                            <div class="ticket-timeline-delay w-20">
+                                                <p>In time</p>
+                                            </div>
+                                        </div>
+                                        <div class="ticket-timeline-details d-flex mb-3">
+                                            <div class="ticket-timeline-time w-25">
+                                                <i class="fa-regular fa-clock"></i>
+                                                <span>1h 30m</span>
+                                            </div>
+                                            <div class="ticket-timeline-status w-55">
+                                                <p>Infra Team</p>
+                                                <span>Application access</span>
+                                            </div>
+                                            <div class="ticket-timeline-delay w-20">
+                                                <p>In time</p>
+                                            </div>
+                                        </div>
+                                        <div class="ticket-timeline-details d-flex mb-3">
+                                            <div class="ticket-timeline-time w-25">
+                                                <i class="fa-regular fa-clock"></i>
+                                                <span>Pending</span>
+                                            </div>
+                                            <div class="ticket-timeline-status w-55">
+                                                <p>Bussiness Analist</p>
+                                                <span>BRD Created and submitted</span>
+                                            </div>
+                                            <div class="ticket-timeline-delay w-20">
+                                                <p>Pending</p>
+                                            </div>
+                                        </div>
+                                        <div class="ticket-timeline-details d-flex mb-3">
+                                            <div class="ticket-timeline-time w-25">
+                                                <i class="fa-regular fa-clock"></i>
+                                                <span>1h 30m</span>
+                                            </div>
+                                            <div class="ticket-timeline-status w-55">
+                                                <p>Bussiness Analist</p>
+                                                <span>BRD Created and submitted</span>
+                                            </div>
+                                            <div class="ticket-timeline-delay w-20">
+                                                <p>Pending</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Ticket Details side bar -->
+                                <div class="ticket-details">
+                                    <div class="ticket-details-heading">
+                                        <p>Detais.</p>
+                                    </div>
+                                    <div class="ticket-detials-body">
+                                        <div class="ticket-details-section d-flex mb-3">
+                                            <div class="ticket-detiail-name w-40">
+                                                <p>Assignee</p>
+                                            </div>
+                                            <div class="ticket-detiail-description w-60">
+                                                <p class="ticket-assignee-user">
+                                                    John Doe
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ticket-details-section d-flex mb-3">
+                                            <div class="ticket-detiail-name w-40">
+                                                <p>Assign to</p>
+                                            </div>
+                                            <div class="ticket-detiail-description w-60">
+                                                <p class="ticket-assignee-user">
+                                                    Wahed khan
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ticket-details-section d-flex mb-3">
+                                            <div class="ticket-detiail-name w-40">
+                                                <p>Request Type</p>
+                                            </div>
+                                            <div class="ticket-detiail-description w-60">
+                                                <p class="ticket-assignee-user">
+                                                    Development
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ticket-details-section d-flex mb-3">
+                                            <div class="ticket-detiail-name w-40">
+                                                <p>Priority</p>
+                                            </div>
+                                            <div class="ticket-detiail-description w-60">
+                                                <p class="ticket-assignee-user">
+                                                    Medium
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ticket-details-section d-flex mb-3">
+                                            <div class="ticket-detiail-name w-40">
+                                                <p>Knowledge base</p>
+                                            </div>
+                                            <div class="ticket-detiail-description w-60">
+                                                <p class="ticket-assignee-user">
+                                                    3 Articales
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {% include "includes/footer.html" %}
+
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+
+
+<script>
+
+    $(document).ready(function() {
+        $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+    });
+
+</script>
+
+{% endblock javascripts %}

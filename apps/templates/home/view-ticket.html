@@ -1,0 +1,297 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Profile {% endblock title %}
+
+{% block content %}
+
+
+<!-- Page content -->
+<div class="container-fluid pt-4">
+    <div class="row">
+        <div class="col-xl-12 order-xl-1">
+            <div class="card">
+                <div class="card-body ticket-created-card">
+                    <div class="tickets-view-header d-flex align-items-center justify-content-between">
+                        <h2>RPA - Tickets</h2>
+
+                        <div class="assignment-buttons d-flex">
+                            <div class="assigntomyselft mr-3">
+                                <button type="button" class="btn btn-primary reassign-btn" data-toggle="modal" data-target="#assigntoself">
+                                    <i class="fa-solid fa-person-arrow-down-to-line"></i>
+                                    Assign to self
+                                </button>
+                            </div>
+
+                             <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary reassign-btn" data-bs-toggle="modal" data-bs-target="#reassignticket">
+                              Reassign Ticket
+                            </button>
+
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="reassignticket" tabindex="-1" aria-labelledby="reassignmenttitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="reassignmenttitle"><i class="fa-solid fa-arrows-down-to-people"></i>Reassign Ticket</h5>
+                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Reassign 3 Tickets to...</p>
+
+                                        <select class="selectpicker" multiple aria-label="Default select example" data-live-search="true">
+                                            <option value="1">Hameed</option>
+                                            <option value="2">Kumar</option>
+                                            <option value="3">Praveen</option>
+                                            <option value="4">Wahed</option>
+                                            <option value="5">Eliyaz</option>
+                                            <option value="6">Sagar</option>
+                                            <option value="7">Saif</option>
+                                            <option value="8">Fazal</option>
+                                            <option value="9">Abdullah</option>
+                                            <option value="10">Noor</option>
+                                            <option value="11">Aman</option>
+                                            <option value="12">Abdul</option>
+                                            <option value="13">Shahid</option>
+                                        </select>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-primary reassign-button">Reassign</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="tickets-table">
+                        <table class="table ticket-view-table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">
+                                    <input type="checkbox" id="vehicle1">
+                                </th>
+                                <th scope="col"># Ticket Number</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Notes</th>
+                                <th scope="col">Assignee</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Assigned To</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Due</th>
+                                <th scope="col">Priority</th>
+                                <th scope="col" class="col-auto">Comments</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input type="checkbox" id="vehicle2"></td>
+                                <td>#REQ00000001</td>
+                                <td>2/3/2024</td>
+                                <td>Waiting for application access</td>
+                                <td>John</td>
+                                <td>IT</td>
+                                <td>Paul</td>
+                                <td>Unassigned</td>
+                                <td>2days</td>
+                                <td><span class="low">Low</span></td>
+                                <td><i class="fa-regular fa-comment-dots mr-1"></i>4</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="vehicle3"></td>
+                                <td>#REQ00000002</td>
+                                <td>2/3/2024</td>
+                                <td>Waiting for business confirmation</td>
+                                <td>Nookia</td>
+                                <td>Development</td>
+                                <td>Wahed</td>
+                                <td>Assigned</td>
+                                <td>4 days</td>
+                                <td><span class="medium">Medium</span></td>
+                                <td><i class="fa-regular fa-comment-dots mr-1"></i>4</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="vehicle41"></td>
+                                <td>#REQ00000003</td>
+                                <td >2/3/2024</td>
+                                <td>Cannot signin to application</td>
+                                <td>Zeena</td>
+                                <td>Business Analist</td>
+                                <td>Praveen</td>
+                                <td>Development</td>
+                                <td>3 days</td>
+                                <td><span class="high">High</span></td>
+                                <td><i class="fa-regular fa-comment-dots mr-1"></i>4</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="vehicle4"></td>
+                                <td>#REQ00000001</td>
+                                <td>2/3/2024</td>
+                                <td>Waiting for application access</td>
+                                <td>John</td>
+                                <td>IT</td>
+                                <td>Paul</td>
+                                <td>Unassigned</td>
+                                <td>2days</td>
+                                <td><span class="low">Low</span></td>
+                                <td><i class="fa-regular fa-comment-dots mr-1"></i>4</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="vehicle5"></td>
+                                <td>#REQ00000002</td>
+                                <td>2/3/2024</td>
+                                <td>Waiting for business confirmation</td>
+                                <td>Nookia</td>
+                                <td>Development</td>
+                                <td>Wahed</td>
+                                <td>Assigned</td>
+                                <td>4 days</td>
+                                <td><span class="medium">Medium</span></td>
+                                <td><i class="fa-regular fa-comment-dots mr-1"></i>4</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="vehicle6"></td>
+                                <td>#REQ00000003</td>
+                                <td >2/3/2024</td>
+                                <td>Cannot signin to application</td>
+                                <td>Zeena</td>
+                                <td>Business Analist</td>
+                                <td>Praveen</td>
+                                <td>Development</td>
+                                <td>3 days</td>
+                                <td><span class="high">High</span></td>
+                                <td><i class="fa-regular fa-comment-dots mr-1"></i>4</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="vehicle7"></td>
+                                <td>#REQ00000001</td>
+                                <td>2/3/2024</td>
+                                <td>Waiting for application access</td>
+                                <td>John</td>
+                                <td>IT</td>
+                                <td>Paul</td>
+                                <td>Unassigned</td>
+                                <td>2days</td>
+                                <td><span class="low">Low</span></td>
+                                <td><i class="fa-regular fa-comment-dots mr-1"></i>4</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="vehicle8"></td>
+                                <td>#REQ00000002</td>
+                                <td>2/3/2024</td>
+                                <td>Waiting for business confirmation</td>
+                                <td>Nookia</td>
+                                <td>Development</td>
+                                <td>Wahed</td>
+                                <td>Assigned</td>
+                                <td>4 days</td>
+                                <td><span class="medium">Medium</span></td>
+                                <td><i class="fa-regular fa-comment-dots mr-1"></i>4</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="vehicle9"></td>
+                                <td>#REQ00000003</td>
+                                <td >2/3/2024</td>
+                                <td>Cannot signin to application</td>
+                                <td>Zeena</td>
+                                <td>Business Analist</td>
+                                <td>Praveen</td>
+                                <td>Development</td>
+                                <td>3 days</td>
+                                <td><span class="high">High</span></td>
+                                <td><i class="fa-regular fa-comment-dots mr-1"></i>4</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="vehicle10"></td>
+                                <td>#REQ00000001</td>
+                                <td>2/3/2024</td>
+                                <td>Waiting for application access</td>
+                                <td>John</td>
+                                <td>IT</td>
+                                <td>Paul</td>
+                                <td>Unassigned</td>
+                                <td>2days</td>
+                                <td><span class="low">Low</span></td>
+                                <td><i class="fa-regular fa-comment-dots mr-1"></i>4</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="vehicle11"></td>
+                                <td>#REQ00000002</td>
+                                <td>2/3/2024</td>
+                                <td>Waiting for business confirmation</td>
+                                <td>Nookia</td>
+                                <td>Development</td>
+                                <td>Wahed</td>
+                                <td>Assigned</td>
+                                <td>4 days</td>
+                                <td><span class="medium">Medium</span></td>
+                                <td><i class="fa-regular fa-comment-dots mr-1"></i>4</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="vehicle12"></td>
+                                <td>#REQ00000003</td>
+                                <td>2/3/2024</td>
+                                <td>Cannot signin to application</td>
+                                <td>Zeena</td>
+                                <td>Business Analist</td>
+                                <td>Praveen</td>
+                                <td>Development</td>
+                                <td>3 days</td>
+                                <td><span class="high">High</span></td>
+                                <td><i class="fa-regular fa-comment-dots mr-1"></i>4</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                            <!-- Pagination -->
+
+                            <nav aria-label="navigation" class="tickets-pagination pt-5">
+                              <ul class="pagination">
+                                <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                  </a>
+                                </li>
+                                <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </nav>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% include "includes/footer.html" %}
+
+</div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+
+
+{% block javascripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+
+
+<script>
+$(function() {
+  $('.selectpicker').selectpicker();
+});
+</script>
+
+{% endblock javascripts %}
+

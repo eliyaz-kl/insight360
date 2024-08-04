@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="selectedItems">Sub Process</label>
+                                        <label class="form-control-label" for="selectedItems">Process</label>
                                         <input type="text" id="selectedItems" class="form-control"
                                                placeholder="Sub Process" readonly onclick="openPopup()">
                                         <div class='poopup-container popup' id="popup">
@@ -45,13 +45,13 @@
                                                                 <li>Reassign</li>
                                                                 <li>Excecute</li>
                                                                 <li>Completed</li>
-                                                                <li>sortable 6</li>
-                                                                <li>sortable 1</li>
-                                                                <li>sortable 2</li>
-                                                                <li>sortable 3</li>
-                                                                <li>sortable 4</li>
-                                                                <li>sortable 5</li>
-                                                                <li>sortable 6</li>
+                                                                <li>Closed 6</li>
+                                                                <li>Closed 1</li>
+                                                                <li>Reject 2</li>
+                                                                <li>Excecute 3</li>
+                                                                <li>Completed 4</li>
+                                                                <li>Reassign 5</li>
+                                                                <li>Reject 6</li>
                                                             </ul>
                                                         </div>
                                                         <div class="sortable-container">
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-ocr">OCR</label>
+                                        <label class="form-control-label" for="input-ocr">Document Validation</label>
                                         <input type="text" id="input-ocr" class="form-control"
                                                placeholder="OCR Involved?" value="NA">
                                     </div>
@@ -98,6 +98,21 @@
                                             (Applications Involved)</label>
                                         <input type="text" id="input-applications-used" class="form-control"
                                                placeholder="Systems" Value="CTF, MSD, Cortex, TMS, ACL, RBS">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-cost-avoidence">Add Cost Avoidence</label>
+                                        <input type="text" id="input-cost-avoidence" class="form-control"
+                                               placeholder="15" Value="15">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-po-value">PO Value</label>
+                                        <input type="number" id="input-po-value" class="form-control"
+                                               placeholder="15" Value="15">
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +127,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-success-rate">Planned success rate
+                                        <label class="form-control-label" for="input-success-rate">Estimated success rate
                                             %</label>
                                         <input type="text" id="input-success-rate" class="form-control"
                                                placeholder="80" value="60">
@@ -120,11 +135,12 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-fte-saving">FTE Saving</label>
+                                        <label class="form-control-label" for="input-fte-saving">Direct FTE Saving</label>
                                         <input type="number" id="input-fte-saving" class="form-control"
                                                placeholder="15" Value="15">
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="row">
@@ -142,17 +158,23 @@
                                                placeholder="10" value="10">
                                     </div>
                                 </div>
+                                <label for="toggleInput">Toggle Input:</label>
+                                <input type="checkbox" id="toggleInput" onchange="toggleInputField()">
+                                <span id="labelText">Label Text</span>
+                                <input type="text" id="inputField" style="display: none;" onblur="updateLabel()">
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-status">Status</label>
                                         <input type="text" id="input-status" class="form-control"
-                                               placeholder="Full\Partial Automation" Value="Full Automation">
+                                        placeholder="Full\Partial Automation" Value="Full Automation">
                                     </div>
                                 </div>
                             </div>
                             <div class="tnote">*Note : For any changes or ammendments in fields, Kindly contact the Application Team for support*</div>
                         </div>
-                        <!-- Description -->
+
+
+                        <!-- Submit button -->
 
                         <div class="pl-lg-4">
                             <button class="btn btn-submit">Submit</button>

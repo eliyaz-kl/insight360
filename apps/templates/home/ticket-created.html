@@ -1,0 +1,152 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Profile {% endblock title %}
+
+{% block content %}
+
+
+
+
+<!-- Page content -->
+<div class="container-fluid pt-4">
+
+
+
+
+
+    <div class="row">
+        <div class="col-xl-8 order-xl-1">
+            <div class="card">
+                <div class="card-body ticket-created-card">
+                    <div class="btn btn-go-to-dashboard mb-5"><i class="fa-solid fa-arrow-left pr-2"></i>Dashboard</div>
+                    <h2 class="noselect">Your Ticket has been created successfully!</h2>
+                    <div class="ticket-number d-flex align-items-center my-2">
+                        <h3 class="m-0" id="text">#REQ00000001</h3>
+                        <button id="copy" tooltip="Copy to clipboard"><i class="fa-regular fa-copy pr-1"></i>Copy</button>
+
+                    </div>
+                    <p class="noselect">Your Ticket is viewable in the Ticket Card of the Accout Overview. </p>
+                    <ul class="noselect">
+                        <li>A confirmation email is on the way</li>
+                        <li>For any changes or queries in the ticket, Kindly contact Application Team</li>
+                    </ul>
+                    <div class="btn btn-view-ticket mt-4">View Ticket <i class="fa-solid fa-arrow-right pl-1"></i></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% include "includes/footer.html" %}
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+
+<script>
+    $(document).ready(function () {
+
+        const textElement = document.getElementById("text");
+        const copyButton = document.getElementById("copy");
+
+        const copyText = (e) => {
+        window.getSelection().selectAllChildren(textElement);
+        document.execCommand("copy");
+        e.target.setAttribute("tooltip", "Copied! ✅");
+        };
+
+        const resetTooltip = (e) => {
+        e.target.setAttribute("tooltip", "Copy to clipboard");
+        };
+
+        copyButton.addEventListener("click", (e) => copyText(e));
+        copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
+
+
+
+
+        $("#generateNewTable").on("click", function (event) {
+         event.preventDefault();
+            // Get values from inputs
+            var totalBots = $("#input-total-bots").val();
+            var projectName = $("#input-project-full-name").val();
+            var botIdPattern = $("#input-bot-id").val();
+
+            // Clear existing table rows
+            $("#resultTable tbody").empty();
+
+            // Generate table rows based on the pattern
+            for (var i = 1; i <= totalBots; i++) {
+                var formattedNumber = i.toString().padStart(2, '0');
+                var row = $("<tr>");
+                var cell1 = $("<td>").text(projectName +" "+ formattedNumber);
+                var cell2 = $("<td>").text(botIdPattern + formattedNumber);
+                row.append(cell1, cell2);
+                $("#resultTable tbody").append(row);
+            }
+         });
+
+         $("#generateExtendTable").on("click", function (event) {
+         event.preventDefault();
+            // Get values from inputs
+            var totalBots = $("#input-total-bots").val();
+            var projectName = $("#input-project-full-name").val();
+            var botIdPattern = $("#input-bot-id").val();
+            var inputExtraIds = $("#input-extra-ids").val();
+            var extendStartID = Number(totalBots) + 1 ;
+            var extendStopID = Number(totalBots) + Number(inputExtraIds) ;
+
+            if(document.getElementById("input-extra-ids").value.length == 0) {
+                $("#required-field").show();
+            } else {
+                $("#required-field").hide();
+            }
+
+
+            // Clear existing table rows
+            $("#resultTable2 tbody").empty();
+
+            // Extend table rows based on provided pattern
+            for (var i = extendStartID; i <= extendStopID; i++) {
+                var formattedNumber = i.toString().padStart(2, '0');
+                var row = $("<tr>");
+                var cell1 = $("<td>").text(projectName + formattedNumber);
+                var cell2 = $("<td>").text(botIdPattern + formattedNumber);
+                row.append(cell1, cell2);
+                $("#resultTable2 tbody").append(row);
+            }
+
+         });
+
+          $( '#multiple-select-field' ).select2({
+            theme: "bootstrap-5",
+            width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+            placeholder: $( this ).data( 'placeholder' ),
+            closeOnSelect: false,
+            allowClear: true,
+            }).on('select2:unselecting', function() {
+            $(this).data('unselecting', true);
+            }).on('select2:opening', function(e) {
+            if ($(this).data('unselecting')) {
+                $(this).removeData('unselecting');
+                e.preventDefault();
+            }
+        });
+
+        // Listen for changes in the selected options
+          $('#multiple-select-field').on('change', function () {
+            $('#dynamicFields').empty();
+            var selectedValues = $(this).val();
+            if (selectedValues) {
+              selectedValues.forEach(function (value) {
+                var inputField = $('<input type="text" class="form-control" name="' + value + '" placeholder="' + value + '">');
+                $('#dynamicFields').append(inputField);
+              });
+            }
+          });
+    });
+</script>
+
+{% endblock javascripts %}
+

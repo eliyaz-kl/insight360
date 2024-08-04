@@ -28,7 +28,15 @@ def ipa_form(request):
 def business_case(request):
     context = {'segment': 'business-case'}
 
-    html_template = loader.get_template('home/business-case.html')
+    html_template = loader.get_template('business_case.html')
+    return HttpResponse(html_template.render(context, request))
+    # return render(request,'business-case.html')
+
+@login_required(login_url="/login/")
+def ticket_created(request):
+    context = {'segment': 'ticket-created'}
+
+    html_template = loader.get_template('home/ticket-created.html')
     return HttpResponse(html_template.render(context, request))
 
 @login_required(login_url="/login/")
@@ -36,6 +44,27 @@ def bot_creation(request):
     context = {'segment': 'bot-creation'}
 
     html_template = loader.get_template('home/bot-creation.html')
+    return HttpResponse(html_template.render(context, request))
+
+@login_required(login_url="/login/")
+def allocate_vm(request):
+    context = {'segment': 'allocate-vm'}
+
+    html_template = loader.get_template('home/allocate-vm.html')
+    return HttpResponse(html_template.render(context, request))
+
+@login_required(login_url="/login/")
+def all_tickets_view(request):
+    context = {'segment': 'all-tickets-view'}
+
+    html_template = loader.get_template('home/all-tickets-view.html')
+    return HttpResponse(html_template.render(context, request))
+
+@login_required(login_url="/login/")
+def ticket_open(request):
+    context = {'segment': 'ticket-open'}
+
+    html_template = loader.get_template('home/ticket-open.html')
     return HttpResponse(html_template.render(context, request))
 
 @login_required(login_url="/login/")
